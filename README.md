@@ -54,7 +54,7 @@ BASH-Learning/
 ### 🛡️ 3. Système de sécurité
 - automatique : *security_check.sh*
 
->Un script qui scanne tous les scripts :
+>Un script qui scanne tous les scripts,
 
    - recherche eval  
    - détecte les commandes dangereuses  
@@ -64,34 +64,33 @@ BASH-Learning/
 
 ---
 
-### 📦 4. Modules v2.0 (professionnels)
-
->🔧 module_system.sh
+### 📦 4. Modules v2.0
+>🔧 **module_system.sh**
 - infos système  
 - CPU / RAM / disque  
 - process monitoring  
 
->🌐 module_network.sh
+>🌐 **module_network.sh**
 - IP / ports / services  
 - ping / traceroute  
 - scan réseau simple  
 
->📂 module_files.sh
+>📂 **module_files.sh**
 - manipulation de fichiers  
 - logs  
 - sauvegardes  
 
->🤖 module_automation.sh
+>🤖 **module_automation.sh**
 - cron  
 - scripts automatiques  
 - tâches programmées  
 
 ---
 
-### 🧪 5. Tests automatisés : 
+### 🧪 5. Tests automatisés
 >dossier tests/
 
-- Avec des scripts comme :
+- Avec des scripts comme,
 ```text
    - test_validator.sh  
    - test_engine.sh  
@@ -102,9 +101,10 @@ Tu introduis la qualité logicielle dans Bash.
 
 ---
 
-### ⚙️ 6. Fichiers de configuration : >configs/
+### ⚙️ 6. Fichiers de configuration
+>configs/
 
--Exemples :
+- Exemples :
 ```text
   - config.yml  
   - modules.yml  
@@ -148,16 +148,16 @@ Tu transformes ton projet en framework documenté.
 
 ### 🧨 9. Nouveaux scripts utiles v2.0
 
->🔥 installer.sh
+>🔥 **installer.sh**
 Installe tout le framework automatiquement.
 
->⚡ update.sh
+>⚡ **update.sh**
 Met à jour les modules.
 
->🧹 cleanup.sh
+>🧹 **cleanup.sh**
 Nettoie les logs, caches, fichiers temporaires.
 
->🛰️ diagnostic.sh
+>🛰️ **diagnostic.sh**
 Analyse complète du système + rapport.
 
 ---
@@ -175,9 +175,9 @@ Analyse complète du système + rapport.
 ### 🧬 11. Compatibilité EraBots v2.0
 
 - Tu peux créer :
-   - bash_agent.py
+   - **bash_agent.py**
 
-- Un agent EraBots qui :
+- Un `agent EraBots` qui :
 ```md
 - exécute des scripts Bash  
 - analyse les logs  
@@ -185,14 +185,14 @@ Analyse complète du système + rapport.
 - propose des corrections
 ```
 
-Tu fusionnes BASH-Learning + EraBots.
+Tu fusionnes `BASH-Learning + EraBots`.
 
 ---
 
 ### 🧠 12. Intelligence intégrée v2.0
 
 - Tu peux ajouter :
-   - ai_assistant.sh
+   - **ai_assistant.sh**
 
 - Un script qui :
 ```md
@@ -219,8 +219,4 @@ Tu fusionnes BASH-Learning + EraBots.
 ✔ Une identité visuelle
 ```
 
->Tu passes d’un projet simple à un framework complet.
-
----
-
-🔥 
+>Tu passes d’un projet simple à un framework complet 🔥 

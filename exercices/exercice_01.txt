@@ -1,0 +1,22 @@
+---
+
+📝 Exercice pratique : exercices/exercice_01.txt
+
+`
+Exercice 01 — BASH-Learning v1.0
+
+Objectif :
+Créer un script nommé system_info.sh qui affiche :
+
+- Le nom de l'utilisateur
+- L'OS utilisé
+- L'adresse IP
+- Le nombre de processus actifs
+
+Bonus :
+Ajouter un menu interactif avec 2 options :
+1) Afficher les infos système
+2) Quitter
+`
+
+---

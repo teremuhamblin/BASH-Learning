@@ -8,3 +8,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias update='sudo apt update && sudo apt upgrade -y'
 alias ports='netstat -tulpn'
+
+Activation :
+
+source aliases.sh

@@ -91,7 +91,7 @@ BASH-Learning/
 ### 🧪 5. Tests automatisés : 
 >dossier tests/
 
--Avec des scripts comme :
+- Avec des scripts comme :
 ```text
    - test_validator.sh  
    - test_engine.sh  

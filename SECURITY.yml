@@ -1,0 +1,69 @@
+# ============================================
+# SECURITY.yml — BASH-Learning v1.x
+# Quantum-Era Security Protocol v1.0
+# ============================================
+
+security:
+  version: "1.0"
+  project: "BASH-Learning"
+  enforced: true
+
+rules:
+  general:
+    - "Ne jamais exécuter un script en sudo sauf nécessité absolue."
+    - "Ne jamais stocker de mots de passe en clair."
+    - "Ne jamais utiliser eval."
+    - "Ne jamais exécuter une commande basée sur une entrée utilisateur non validée."
+    - "Ne jamais modifier des fichiers système dans les versions 1.x."
+
+  mandatory_headers:
+    shebang: "#!/usr/bin/env bash"
+    strict_mode: "set -euo pipefail"
+    error_trap: "trap 'echo \"[ERREUR] Ligne $LINENO\"' ERR"
+
+  validation:
+    input:
+      numeric: "Entrée doit être un nombre."
+      regex: "Utiliser des regex strictes pour valider les choix utilisateur."
+    dependencies:
+      check: "command -v <cmd> >/dev/null 2>&1 || exit 1"
+
+permissions:
+  allowed:
+    - "chmod +x sur les scripts du projet"
+    - "lecture des fichiers locaux"
+  forbidden:
+    - "chmod sur fichiers système"
+    - "chown sur fichiers système"
+    - "rm -rf /"
+    - "curl | bash"
+    - "wget | sh"
+
+commands:
+  allowed:
+    - ls
+    - df
+    - du
+    - date
+    - grep
+    - awk
+    - sed
+    - mkdir
+    - touch
+    - cat
+    - netstat
+
+  forbidden:
+    - eval
+    - rm -rf
+    - commandes réseau non contrôlées
+
+updates:
+  policy:
+    - "Chaque version doit renforcer la sécurité."
+    - "Chaque changement doit être documenté dans CHANGELOG.md."
+    - "Les modifications de sécurité doivent passer par une Pull Request."
+
+reporting:
+  vulnerability_tag: "[SECURITY]"
+  channel: "GitHub Issues"

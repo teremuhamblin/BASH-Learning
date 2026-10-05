@@ -1,0 +1,84 @@
+# ============================================================
+# SECURITY.yml — BASH-Learning v2.0
+# Quantum-Era Security Protocol v2.0
+# ============================================================
+
+security:
+  version: "2.0"
+  project: "BASH-Learning"
+  enforced: true
+  engine: "Quantum-Era Core Engine v2.0"
+
+rules:
+  general:
+    - "Ne jamais exécuter un script en sudo sauf nécessité absolue."
+    - "Ne jamais stocker de mots de passe en clair."
+    - "Ne jamais utiliser eval."
+    - "Ne jamais exécuter une commande basée sur une entrée utilisateur non validée."
+    - "Ne jamais modifier des fichiers système dans les versions 2.x."
+    - "Tous les scripts doivent être scannés via security_check.sh avant release."
+
+headers:
+  required:
+    shebang: "#!/usr/bin/env bash"
+    strict_mode: "set -euo pipefail"
+    error_trap: "trap 'echo \"[ERROR] Ligne $LINENO\"' ERR"
+
+validation:
+  input:
+    numeric: "Entrée doit être un nombre."
+    path: "Chemin doit être un dossier valide."
+    command: "La commande doit exister dans le système."
+  dependencies:
+    check: "command -v <cmd> >/dev/null 2>&1 || exit 1"
+
+permissions:
+  allowed:
+    - "chmod +x sur les scripts du projet"
+    - "lecture des fichiers locaux"
+  forbidden:
+    - "chmod sur fichiers système"
+    - "chown sur fichiers système"
+    - "rm -rf /"
+    - "curl | bash"
+    - "wget | sh"
+
+commands:
+  allowed:
+    - ls
+    - df
+    - du
+    - date
+    - grep
+    - awk
+    - sed
+    - mkdir
+    - touch
+    - cat
+    - netstat
+
+  forbidden:
+    - eval
+    - rm -rf
+    - commandes réseau non contrôlées
+
+updates:
+  policy:
+    - "Chaque version doit renforcer la sécurité."
+    - "Chaque changement doit être documenté dans CHANGELOG.md."
+    - "Les modifications de sécurité doivent passer par une Pull Request dédiée."
+
+reporting:
+  vulnerability_tag: "[SECURITY]"
+  channel: "GitHub Issues"
+  severity_levels:
+    - critical
+    - high
+    - medium
+    - low
+
+engine_integration:
+  logger: "core/logger.sh"
+  validator: "core/validator.sh"
+  scanner: "core/security_check.sh"
+  modules_dir: "modules/"
